@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Traverse</title>
+    <script>
+        let data=[1,2,4,6,7,8,5,4,6];
+    //         for(let i=0;i<data.length;i++){
+    //            document.write(`${data[i]} <br>`)
+    //    }
+
+    // let x=3;
+    // document.write(data[x]);
+
+    function getElement(){
+        let el=document.getElementById("element").value;
+        let index = parseInt(el);
+        if(!isNaN(index)&&index>=0&&index<data.length){
+           alert(data[index]);
+        }
+        else{
+            alert("please enter valid number")
+        }
+        
+    }
+    </script>
+</head>
+<body>
+    <input type="text" id="element"/>
+    <button onclick="getElement()">Get element</button>
+</body>
+</html>
