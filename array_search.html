@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let data =[10,30,49,59,34,56,67,77,44];
+        let items=59;
+        let index=undefined;
+
+        for(let i=0;i<=data.length-1;i++){
+            // console.warn(data[i]);
+            if(data[i]===items){
+                index=i;
+                break;
+            }
+        }
+        // console.warn(index);
+        // console.warn(data.indexOf(items));
+        //    data.splice(1,1)
+        //    console.warn(data);
+
+        function searchElement(){
+            let data =[10,30,49,59,34,56,67,77,44];
+            let items=document.getElementById("element").value;
+            let index=undefined;
+
+        for(let i=0;i<=data.length-1;i++){
+            // console.warn(data[i]);
+            if(data[i]===parseInt(items)){
+                index=i;
+                break;
+            }
+        }
+        console.warn(index);
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="element" placeholder="Enter an Element"/>
+    <button onclick="searchElement()">Search Element</button>
+</body>
+</html>
