@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Head and Tail Recursion</title>
+    <script>
+        
+        let data=5;
+
+        function check(x){
+            debugger;
+        //   console.warn(x)
+          if(x > 0){
+            check(x-1);
+          }
+          console.warn(x)
+        }
+
+        check(data);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
