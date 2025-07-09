@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse string with Javascript</title>
+    <script>
+        let data=[];
+        let currentSize=data.length;
+
+        function push(i){
+           
+           data[currentSize]=i;
+           currentSize+=1;
+        }
+       function pop(){
+        lastRemovedItem=data[currentSize-1]
+        currentSize-=1;
+        data.length=currentSize;
+        return lastRemovedItem;
+       }
+
+       function reverseStr(j){
+        for (let i = 0; i < j.length; i++) {
+          push(j[i])
+            
+        }
+         for (let i = 0; i < j.length; i++) {
+           j[i]=pop();
+            
+        }
+       }
+
+       let str="amar"
+       str=str.split("");
+       reverseStr(str)
+       str=str.join("");
+       console.warn(str);
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
