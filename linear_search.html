@@ -1,0 +1,43 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linear Search with Javascript</title>
+    <script>
+      // let data = [1,24,45,67,44,6];
+      // let find=6;
+      // let pos = undefined;
+
+      // for(let i=0; i<=data.length;i++){
+      //     if(data[i]==find){
+      //         pos=i;
+      //     }
+      // }
+      // console.warn(pos);
+
+      function searchEl() {
+        let data = [1, 24, 45, 67, 44, 6];
+        let find =document.getElementById("el").value;
+        let pos = undefined;
+
+        for (let i = 0; i <= data.length; i++) {
+          if (data[i] == find) {
+            pos = i;
+            break;
+          }
+         
+        }
+        if(!pos){
+            alert("position not found");
+        }
+        else{
+            alert("Element position is " + pos);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="el" placeholder="Enter Element" />
+    <button onclick="searchEl()">Search Element</button>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search Iterative with Javascript</title>
+     <script>
+        let data=[5,9,12,15,18,23,34,36,100,150]
+        let start=0;
+        let end=data.length-1;
+        let find=100;
+        let position=undefined;
+
+        while(start<=end){
+           let mid=Math.floor((start+end)/2);
+           if(data[mid]===find){
+               position=mid;
+               break;
+           }
+           else if(data[mid] < find){
+                start = mid+1;
+           }
+           else{
+            end = mid - 1;
+           }
+        }
+
+        console.warn(position);
+     </script>
+</head>
+<body>
+    
+</body>
+</html>
