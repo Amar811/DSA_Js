@@ -1,0 +1,27 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selection sort with Javascript</title>
+    <script>
+      let data = [13, 46, 6, 7, 5, 2, 1,0];
+
+      function selectionSort(item) {
+        for (let i = 0; i < item.length; i++) {
+          minVal = i;
+          for (let j = i + 1; j < item.length; j++) {
+            if(item[j] < item[minVal])
+              minVal=j;
+            }
+          let temp = item[minVal];
+          item[minVal]=item[i];
+          item[i]=temp;
+        }
+      }
+
+      selectionSort(data);
+      console.warn(data);
+    </script>
+  </head>
+  <body></body>
+</html>
