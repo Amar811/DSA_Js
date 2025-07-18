@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check string are anagram </title>
+    <script>
+        function checkAnagram(str1,str2){
+            let objectStr1={};
+           for(ch of str1){
+               objectStr1[ch]=(objectStr1[ch] || 0)+1;
+           }
+           for(ch of str2){
+            if(!objectStr1[ch]){
+               return false;
+            }
+            objectStr1[ch]--
+           }
+           return true;
+           
+        }
+
+       
+        console.warn( checkAnagram("amar","ramaa"));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
