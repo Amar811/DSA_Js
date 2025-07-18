@@ -1,0 +1,29 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width='device-width', initial-scale=1.0" />
+    <title>Descending sort</title>
+    <script>
+      let data = [5, 58, 51, 1, 4, 6, 0];
+
+      function selectioSort(arr) {
+        for (let i = 0; i < arr.length; i++) {
+          let maxIndex = i;
+          for (let j = i + 1; j < arr.length; j++) {
+            if (arr[j] > arr[maxIndex]) {
+              maxIndex = j;
+            }
+          }
+          // Swap only after finding the max
+          let temp = arr[maxIndex];
+          arr[maxIndex] = arr[i];
+          arr[i] = temp;
+        }
+      }
+
+      selectioSort(data);
+      console.log(data);
+    </script>
+  </head>
+  <body></body>
+</html>
