@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check maxmimum occuring element</title>
+    <script>
+        let data="hello";
+
+        function stringOccuring(item){
+          let objStr={};
+          let maxKey='';
+
+          for(let i=0;i<item.length;i++){
+            let key=item[i];
+            if(!objStr[key]){
+                objStr[key]=0;
+            }
+            objStr[key]++;
+            if(maxKey =='' || objStr[key] > objStr[maxKey]){
+                maxKey=key;
+            }
+          }
+          console.warn(maxKey);
+        }
+
+        console.warn(stringOccuring(data));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
