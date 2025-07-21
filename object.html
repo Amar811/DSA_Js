@@ -1,0 +1,30 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object with Data Structure</title>
+    <script>
+         let data={
+            name:"Amar",
+            age:'24',
+            mail:'apple12@gmail.com',
+            getname:function(){
+                return this.name;
+            }
+         }
+         data.name='apple';
+
+        //  console.log(data.getname());
+        //   for (x in data) {
+        //       console.warn(data[x]);
+              
+        //   }
+
+        console.warn(Object.keys(data));
+        console.warn(Object.values(data));
+        console.warn(Object.entries(data));
+  
+    </script>
+  </head>
+  <body></body>
+</html>
