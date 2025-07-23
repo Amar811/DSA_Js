@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked List in Javascript</title>
+    <script>
+        class List{
+            constructor(data){
+              this.head={
+                value:data,
+                next:null,
+              };
+              this.tail = this.head;
+              this.size=1;
+            }
+
+            appendNode(nodedata){
+              let newNode ={
+                value:nodedata,
+                next:null,
+              }
+              this.tail.next=newNode;
+              this.tail=newNode;
+              this.size+=1;
+            }
+
+            traversing(){
+            let counter=0;
+            let currentNode = this.head;
+            while(counter < this.size){
+               console.warn(currentNode);
+               currentNode = currentNode.next;
+               counter++;
+            }
+
+            }
+
+        }
+
+        let list = new List(200);
+        list.appendNode(300);
+        list.appendNode(400);
+         list.appendNode(500);
+         list.appendNode(100);
+
+         list.traversing();
+        // console.warn(list)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
