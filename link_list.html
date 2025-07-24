@@ -1,53 +1,98 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Linked List in Javascript</title>
     <script>
-        class List{
-            constructor(data){
-              this.head={
-                value:data,
-                next:null,
-              };
-              this.tail = this.head;
-              this.size=1;
-            }
-
-            appendNode(nodedata){
-              let newNode ={
-                value:nodedata,
-                next:null,
-              }
-              this.tail.next=newNode;
-              this.tail=newNode;
-              this.size+=1;
-            }
-
-            traversing(){
-            let counter=0;
-            let currentNode = this.head;
-            while(counter < this.size){
-               console.warn(currentNode);
-               currentNode = currentNode.next;
-               counter++;
-            }
-
-            }
-
+      class List {
+        constructor(data) {
+          this.head = {
+            value: data,
+            next: null,
+          };
+          this.tail = this.head;
+          this.size = 1;
         }
 
-        let list = new List(200);
-        list.appendNode(300);
-        list.appendNode(400);
-         list.appendNode(500);
-         list.appendNode(100);
+        //add list to the next
+        appendNode(nodedata) {
+          let newNode = {
+            value: nodedata,
+            next: null,
+          };
+          this.tail.next = newNode;
+          this.tail = newNode;
+          this.size += 1;
+        }
 
-         list.traversing();
-        // console.warn(list)
+        // iterate list
+
+        traversing() {
+          let counter = 0;
+          let currentNode = this.head;
+          while (counter < this.size) {
+            console.warn(currentNode);
+            currentNode = currentNode.next;
+            counter++;
+          }
+        }
+
+        // delete the list
+        deleteNode(index) {
+          let counter = 1;
+          let lead = this.head;
+          if (index === 1) {
+            this.head = this.head.next;
+          } else {
+            while (counter < index - 1) {
+              lead = lead.next;
+              counter++;
+            }
+            let nextNode = lead.next.next;
+            lead.next = nextNode;
+          }
+        }
+
+        //insert the list
+        insertNode(index, value) {
+          let counter = 1;
+          let currentNode = this.head;
+          while (counter < index) {
+            counter++;
+            currentNode = currentNode.next;
+          }
+          let nextNode = currentNode.next;
+          currentNode.next = {
+            value: value,
+            next: nextNode,
+          };
+        }
+
+        searchNode(data) {
+          let result = false;
+          let lead = this.head;
+          while (lead) {
+            if (lead.value === data) {
+              result = true;
+              break;
+            }
+            lead = lead.next;
+          }
+        }
+      }
+
+      let list = new List(100);
+      list.appendNode(200);
+      list.appendNode(300);
+      list.appendNode(400);
+      list.appendNode(500);
+      // list.traversing();
+      // list.deleteNode(4);
+      list.insertNode(4, 6000);
+      list.searchNode(200);
+
+      console.warn(list);
     </script>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body></body>
 </html>
